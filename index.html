@@ -508,17 +508,17 @@
             <div class="col-md-6 col-lg-6 col-sm-12">
               <div class="contact-block">
                 <h2>Contact Form</h2>
-                <form id="contactForm"  action="contact.php" method="post">
+                <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/1ZElWhYBawabk3VU7T7pwW4vY8UDNxyLnmdYcm6a8h9k/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required data-error="Please enter your name" value="">
+                        <input type="text" class="form-control" id="entry.767180329" name="entry.767180329" placeholder="Name" required data-error="Please enter your name" value="">
                         <div class="help-block with-errors"></div>
                       </div>                                 
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="email" placeholder="Email" id="email" class="form-control" name="email" required data-error="Please enter your email" value="">
+                        <input type="email" placeholder="Email" id="entry.1773918671" class="form-control" name="entry.1773918671" required data-error="Please enter your email" value="">
                         <div class="help-block with-errors"></div>
                       </div> 
                     </div>
@@ -530,7 +530,7 @@
                     </div> -->
                     <div class="col-md-12">
                       <div class="form-group"> 
-                        <textarea class="form-control" id="message" placeholder="Your Message"  name="message" rows="5" data-error="Write your message" required></textarea>
+                        <textarea class="form-control" id="entry.1866139070" placeholder="Your Message"  name="entry.1866139070" rows="5" data-error="Write your message" required></textarea>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="submit-button">
@@ -541,6 +541,7 @@
                     </div>
                   </div>            
                 </form>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
               </div>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12">
@@ -630,6 +631,12 @@
     <script src="assets/js/form-validator.min.js"></script>
     <script src="assets/js/contact-form-script.min.js"></script>
     <script src="assets/js/map.js"></script>
-      
+    <script type="text/javascript">var submitted=false;</script>
+    <script type="text/javascript">
+    $('#gform').on('submit', function(e) {
+      $('#gform *').fadeOut(2000);
+      $('#gform').prepend('Your submission has been processed...');
+      });
+    </script>
   </body>
 </html>
