@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
   </head>
   <body>
@@ -534,7 +535,9 @@
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="submit-button">
-                        <button class="btn btn-common" id="submit" type="submit">Send Message</button>
+                        <div class="g-recaptcha" data-sitekey="6LcaDOEcAAAAAMMMjj-8-BQorfN6X5DJIScfRuFz"></div>
+                        <button class="btn btn-common"" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'data-action='submit'>Submit</button>
+                        <!-- <button class="btn btn-common" id="submit" type="submit">Send Message</button> -->
                         <div id="msgSubmit" class="h3 text-center hidden"></div> 
                         <div class="clearfix"></div> 
                       </div>
@@ -633,7 +636,8 @@
     <script src="assets/js/map.js"></script>
     <script type="text/javascript">var submitted=false;</script>
     <script type="text/javascript">
-    $('#gform').on('submit', function(e) {
+    // $('#gform').on('submit', function(e) {
+    function onSubmit(token) {
       $('#gform *').fadeOut(2000);
       $('#gform').prepend('Thank you for contacting me...');
       });
