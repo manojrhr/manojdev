@@ -540,7 +540,7 @@
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="submit-button">
-                        <input class="dispnon" name="last_name" type="text">
+                        <input class="dispnon" id="last_name" name="last_name" type="text">
                         <!-- <div class="g-recaptcha" data-sitekey="6LcaDOEcAAAAAMMMjj-8-BQorfN6X5DJIScfRuFz"></div> -->
                         <!-- <button class="btn btn-common"" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'data-action='submit'>Submit</button> -->
                         <button class="btn btn-common" id="submit" type="submit">Send Message</button>
@@ -644,6 +644,10 @@
     <script type="text/javascript">
     $('#gform').on('submit', function(e) {
     // function onSubmit(token) {
+      if($('#last_name').val() != "")
+      {
+          return;
+      }
       $('#gform *').fadeOut(2000);
       $('#gform').prepend('Thank you for contacting me...');
       });
